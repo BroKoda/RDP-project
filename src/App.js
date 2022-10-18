@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {SplitScreen} from "./SplitScreen";
+
+const LeftHandComponent = ({name}) => (
+	<h1>Random left {name}</h1>
+)
+
+const RightHandComponent = ({message}) => (
+	<h1>Random right {message}</h1>
+)
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<SplitScreen leftWeight={1} rightWeight={3}>
+			<LeftHandComponent name={'Konrad'}/>
+			<RightHandComponent message={'Helloka'}/>
+		</SplitScreen>
+	);
 }
 
 export default App;
